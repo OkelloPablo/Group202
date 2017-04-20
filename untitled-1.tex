@@ -3,9 +3,9 @@
 
 \title{COLLEGE OF COMPUTING AND INFORMATION SCIENCES\\ DEPARTMENT OF COMPUTER SCIENCE\\ SCHOOL OF COMPUTING AND INFORMATICS TECHNOLOGY\\}
 \maketitle
-\title{NAME:	     OKIRING PAUL MWESIGYE MICHAEL\\
-STUDENTS NUMBER:	 214016765  214019414\\
-REGISTRATION NUMBER: 14/U/13973/EVE 14/U/10401/EVE}
+\title{NAME:	      OKIRING PAUL                 MWESIGYE MICHAE          OKELLO JOHN PAUL\\
+STUDENTS NUMBER:      214016765                    214019414                  215005517
+REGISTRATION NUMBER:  14/U/13973/EVE               14/U/10401/EVE              15/U/11991/EVE
 \maketitle
 
 \section{INTRODUCTION}
@@ -16,6 +16,19 @@ Given a model of a system, exhaustively and automatically check whether this mod
 In order to solve such a problem algorithmically, both the model of the system and the specification are formulated in some precise mathematical language. To this end, the problem is formulated as a task in logic, namely to check whether a given structure satisfies a given logical formula. This general concept applies to many kinds of logics and suitable structures. A simple model checking problem is verifying whether a given formula in the propositional logic is satisfied by a given structure.
 
 \section{BACKGROUND}
+The satisfiability problem for branching-time temporal logics like CTL*, CTL and CTL+ has important applications in program specification and verification. Their computational complexities are known: CTL* and CTL+ are complete for doubly exponential time, CTL is complete for single exponential time. Some decision procedures for these logics are known; they use tree automata, tableaux or axiom systems.
+Automata-theoretic approaches. As much as the introduction of CTL* has led to an easy unification of CTL and LTL, it has also proved to be quite a difficulty in obtaining decision procedures for this logic. The first procedure by Emerson and Sistla was automata-theoretic [ES84] and roughly works as follows. A formula is translated into a doubly-exponentially large tree automaton whose states are Hintikka-like sets of sets of sub formulas of the input formula.
+This tree automaton recognizes a superset of the set of tree models of the input formula. It
+is lacking a mechanism that ensures that certain temporal operators are really interpreted
+as least fix points of certain monotone functions rather than arbitrary fix points.
+Other approaches. Apart from these automata-theoretic approaches, a few deferent ones
+have been presented as well. For instance, there is Reynolds' proof system for validity
+[Rey01]. Its completeness proof is rather intricate and relies on the presence of a rule which
+violates the sub formula property. In essence, this rule quantity over an arbitrary set of
+atomic propositions. Thus, while it is possible to check a given tree for whether or not it is
+a proof for a given formula, it is not clear how this system could be used in order to
+find proofs for given formulas.
+
 
 \section{MAIN OBJECTIVES}
  To show the connexions between the temporal logics CTL and / or CTL*, automata, and games.
@@ -30,6 +43,15 @@ In order to solve such a problem algorithmically, both the model of the system a
 \section{Scope}
 \section{Descriptions}
 \section{Significances}
+Advantages of the game-based approach. The game-theoretic framework uniformly treats the standard branching-time logics from the relatively simple CTL to the relatively complex CTL.
+ It yields complexity-theoretic optimal results, i.e. satisfiability checking using this framework
+is possible in exponential time for CTL and doubly exponential time for CTL+.
+ Like the automata-theoretic approaches, it separates the characterization of satisfiability
+through a syntactic object (a parity game) from the test for satisfiability (the problem
+of solving the game). Thus, advances in the area of parity game solving carry over to
+satisfiability checking. Like the tableaux-based approach, it keeps a very close relationship between the input formula and the structure of the parity game thus enabling feedback from a (counter-)model or applications in specification and verification. Satisfiability checking procedures based on this framework are implemented in the
+MLSolver platform [FL10] which uses the high-performance parity game solver PG-Solver [FL09] as its algorithmic backbone.
+
 \section{Methodologies}
 The decision procedures for these logics are known;
 \paragraph{ The tree automatas}
@@ -58,4 +80,4 @@ http://dx.doi.org/10.1145/333979.333987 \\
 
 
 \end{list}
-	\end{document} 
+\end{document} 
